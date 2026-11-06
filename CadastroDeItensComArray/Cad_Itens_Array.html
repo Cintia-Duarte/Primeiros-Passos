@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Itens</title>
+</head>
+
+<body>
+    <script>
+        /*Criei um script JS para cadastrar itens em um array através de um prompt, 
+        com botões específicos para excluir o primeiro e o último item do array. 
+        
+        Na receitinha deste código, foram usados:
+        console.log - para exibir, no console, a lista de itens e execuções; prompt - para receber a opção escolhida e item digitado pelo usuário; 
+        array [] - para criar a lista; do {} while() - para executar o programa enquanto a opção "4 - Sair" não for escolhida; 
+        for(of){} - para percorrer a lista criada; e switch (){case ""} - para definir a ação de cada opçao executará, conforme escolha do usuário. 
+        Foram utilizados: push () - para adicionar o item no final da fila; shift () - para excluir o primeiro item da fila; pop() -  para excluir o ultimo item da fila;
+        */
+
+
+
+        const cadItens = [];
+        let opcao;
+
+        console.log(`Informe os itens "${cadItens}": `);
+
+        do {
+            for (cadItem of cadItens) {
+                console.log(cadItem);
+            }
+
+            opcao = prompt(`Qual opção deseja?
+        1 -> Cadastrar item.
+        2 -> Excluir o Primeiro item.
+        3 -> Excluir o Ultimo item.
+        4 -> Sair.`);
+            switch (opcao) {
+                case "1":
+
+                    const cadastrar = prompt("Informe o item para cadastro: ");
+                    cadItens.push(cadastrar);
+                    console.log(`"${cadastrar}" O item foi incluido.`);
+
+                    break;
+
+                case "2":
+                    const excPrimitem = cadItens.shift();
+                    console.log(`"${excPrimitem}" Excluido Primeiro Item.`);
+
+                    break;
+
+                case "3":
+                    const exUltitem = cadItens.pop();
+                    console.log(`"${exUltitem}" Excluido Ultimo Item.`);
+
+                    break;
+            }
+        }
+        while (opcao !== "4");
+
+
+
+    </script>
+
+</body>
+
+</html>
